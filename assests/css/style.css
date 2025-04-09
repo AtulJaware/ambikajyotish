@@ -1,0 +1,97 @@
+/* Floating Icons - Left & Right Positioning */
+.call-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 25px;  /* Left side */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    animation: bounceZoom 1.5s infinite alternate;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;  /* Right side */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    animation: bounceZoom 1.5s infinite alternate;
+}
+
+/* Hover Effect - Glow & Bigger */
+.call-icon:hover, .whatsapp-icon:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Icon Image Styling (Bigger) */
+.call-icon img, .whatsapp-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Custom Navbar Toggler */
+.custom-toggler {
+    border: 2px solid white !important; /* White border */
+    padding: 4px 6px; /* Padding for better size */
+    border-radius: 6px; /* Rounded edges */
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light white background */
+}
+
+.custom-toggler:focus {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
+
+.card-img-top {
+    padding: 15px;
+    border-radius: 20px;
+}
+.btn {
+    border-radius: 20px;
+    background-color: #FFB700;
+    border-color: black;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: violet;
+    border-color: black;
+    transform: scale(1.1); /* Zoom in by 10% */
+}
+.card {
+    background-color: #A20000 !important;
+    color: white; /* make text readable */
+}
+
+
+
+/* Bounce + Zoom Animation */
+@keyframes bounceZoom {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
