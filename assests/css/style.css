@@ -82,7 +82,7 @@
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) ;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     color:#FFB700;
@@ -97,6 +97,37 @@
     transform: rotateY(180deg);
   }
 
+  #navbarNav {
+    /* set the width of the navbar */
+    width: 35%;
+  }
+  
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+      filter: invert(1); /* Inverts the white icon to black */
+  }
+
+
+  .carousel-indicators {
+      justify-content: center;
+      margin-top: 20px;
+  }
+  
+  .carousel-indicators [data-bs-target] {
+      background-color: black;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      opacity: 0.5;
+      margin: 0 5px;
+  }
+  
+  .carousel-indicators .active {
+      opacity: 1;
+  }
+
+  
 
 
 
