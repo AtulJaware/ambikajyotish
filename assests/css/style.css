@@ -67,6 +67,7 @@
     border-radius: 20px;
     background-color: #FFB700;
     border-color: black;
+    color: black !important;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -76,9 +77,26 @@
     transform: scale(1.1); /* Zoom in by 10% */
 }
 .card {
-    background-color: #A20000 !important;
+    background-color: #A20000;
     color: white; /* make text readable */
 }
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color:#FFB700;
+}
+
+.card .flip-img {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .flip-img {
+    transform: rotateY(180deg);
+  }
+
 
 
 

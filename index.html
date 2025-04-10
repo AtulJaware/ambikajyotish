@@ -226,6 +226,56 @@
     </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section id="service" class="py-5">
+        <div class="container text-center">
+            <h1 class="mb-4" style="color: #A20000; font-weight: bold;">Why Choose Us?</h1>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="assests/images/family-icon.png" class="card-img-top flip-img"
+                            style="width: 40%; height: 40%; align-self: center" alt="Love Problems">
+                        <div class="card-body">
+                            <h3 class="card-title count" data-target="4508" data-suffix="+">0</h3>
+                            <p class="card-text">Family Disputes Solution</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="assests/images/love-marriage-icon.png" class="card-img-top flip-img"
+                            style="width: 40%; height: 40%; align-self: center" alt="Love Marriage Problems">
+                        <div class="card-body">
+                            <h3 class="card-title count" data-target="6984" data-suffix="+">0</h3>
+                            <p class="card-text">Love Marriage Solution</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="assests/images/happy-clients-icon.png" class="card-img-top flip-img"
+                            style="width: 40%; height: 40%; align-self: center" alt="Happy Clients">
+                        <div class="card-body">
+                            <h3 class="card-title count" data-target="10868" data-suffix="+">0</h3>
+                            <p class="card-text">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card shadow">
+                        <img src="assests/images/privacy-icon.png" class="card-img-top flip-img"
+                            style="width: 40%; height: 40%; align-self: center" alt="Extra Card">
+                        <div class="card-body">
+                            <h3 class="card-title count" data-target="100" data-suffix="%">0</h3>
+                            <p class="card-text">Privacy
+                                Guarantee</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="py-5 bg-light">
         <div class="container text-center">
@@ -242,7 +292,7 @@
             <p class="lead">At Ambika Jyotish, we believe that your destiny can be redefined — with the right guidance
                 at the right time.
             </p>
-            <h4 >Ambika Jyotish&nbsp; has expertise in situations like :</h4>
+            <h4>Ambika Jyotish&nbsp; has expertise in situations like :</h4>
         </div>
         <div class="elementor-widget-container">
             <br>
@@ -307,5 +357,46 @@
 
 
 </body>
+<script>
+    const counters = document.querySelectorAll('.count');
+    let animated = false;
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
+            const speed = 200;
+            const increment = target / speed;
+
+            const updateCount = () => {
+                const current = parseFloat(counter.innerText.replace(suffix, ''));
+
+                if (current < target) {
+                    counter.innerText = Math.ceil(current + increment) + suffix;
+                    setTimeout(updateCount, 20);
+                } else {
+                    counter.innerText = target + suffix;
+                }
+            };
+
+            updateCount();
+        });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+                animateCounters();
+                animated = true;
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    const section = document.querySelector('#service');
+    if (section) observer.observe(section);
+</script>
+
 
 </html>
